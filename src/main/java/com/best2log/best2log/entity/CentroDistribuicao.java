@@ -95,12 +95,23 @@ public class CentroDistribuicao {
         this.listaEstoquista = listaEstoquista;
     }
 
-    public boolean isAtivo() {
+    public boolean getAtivo() {
         return ativo;
     }
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public void setAllAtributos(CentroDistribuicao centroDistribuicao) {
+        this.setIdCentroDistribuicao(centroDistribuicao.getIdCentroDistribuicao());
+        this.setNomeCentroDistribuicao(centroDistribuicao.getNomeCentroDistribuicao());
+        this.setEndereco(centroDistribuicao.getEndereco());
+        this.setResponsavel(centroDistribuicao.getResponsavel());
+        this.setListaConferente(centroDistribuicao.getListaConferente());
+        this.setBairrosAssociados(centroDistribuicao.bairrosAssociados);
+        this.setListaEstoquista(centroDistribuicao.getListaEstoquista());
+        this.setAtivo(centroDistribuicao.getAtivo());
     }
 
 }

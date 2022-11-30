@@ -100,7 +100,19 @@ public class Endereco {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
- 
+
+    public void setAllAtributos(Endereco endereco) {
+    }
+     public void setAllAtributos(Endereco endereco) {
+        this.setIdEndereco(endereco.getIdEndereco());
+        this.setCep(endereco.getCep());
+        this.setEndereco(endereco.getEndereco());
+        this.setResponsavel(endereco.getResponsavel());
+        this.setListaConferente(endereco.getListaConferente());
+        this.setBairrosAssociados(endereco.bairrosAssociados);
+        this.setListaEstoquista(endereco.getListaEstoquista());
+        this.setAtivo(endereco.getAtivo());
+    }
 }
 
 //OK
