@@ -1,12 +1,13 @@
 package com.best2log.best2log.entity;
 
+import java.time.Instant;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Produto")
-
 public class Produto {
 
     @Column(name = "id_produto")
@@ -29,6 +30,9 @@ public class Produto {
 
     @Column(name = "endereco")
     private Endereco endereco;
+
+    @Column(name = "data")
+    private Instant data;
 
     public Produto() {
     }
@@ -89,4 +93,11 @@ public class Produto {
         this.endereco = endereco;
     }
 
+    public Instant getData() {
+        return data;
+    }
+
+    public void setData(Instant data) {
+        this.data = data;
+    }
 }

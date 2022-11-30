@@ -1,5 +1,5 @@
 package com.best2log.best2log.entity;
 
-public class Estoquista {
+public class Estoquista extends Funcionario {
 
 }

@@ -1,5 +1,5 @@
 package com.best2log.best2log.entity;
 
-public class Conferente {
+public class Conferente extends Funcionario {
 
 }
