@@ -2,12 +2,17 @@ package com.best2log.best2log.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "funcionario")
 public class Funcionario {
 
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_funcionario")
     private Integer id_funcionario;
 
@@ -34,9 +39,6 @@ public class Funcionario {
 
     @Column(name = "status")
     private String status;
-
-    public Funcionario() {
-    }
 
     public Integer getId_funcionario() {
         return id_funcionario;
@@ -109,4 +111,7 @@ public class Funcionario {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }
+
+//OK

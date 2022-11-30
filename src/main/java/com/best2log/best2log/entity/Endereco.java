@@ -2,14 +2,19 @@ package com.best2log.best2log.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "endereco")
 public class Endereco {
 
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_endereco")
-    private Integer id_endereco;
+    private Integer idEndereco;
 
     @Column(name = "cep")
     private String cep;
@@ -29,15 +34,15 @@ public class Endereco {
     @Column(name = "complemento")
     private String complemento;
 
-    public Endereco() {
+    @Column(name = "ativo")
+    private boolean ativo;
+
+    public Integer getIdEndereco() {
+        return idEndereco;
     }
 
-    public Integer getId_endereco() {
-        return id_endereco;
-    }
-
-    public void setId_endereco(Integer id_endereco) {
-        this.id_endereco = id_endereco;
+    public void setIdEndereco(Integer idEndereco) {
+        this.idEndereco = idEndereco;
     }
 
     public String getCep() {
@@ -88,4 +93,14 @@ public class Endereco {
         this.complemento = complemento;
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+ 
 }
+
+//OK

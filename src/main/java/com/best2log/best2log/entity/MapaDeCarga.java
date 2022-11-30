@@ -1,57 +1,61 @@
 package com.best2log.best2log.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ProdutoEstoque")
+@Table(name = "produto_estoque")
 public class MapaDeCarga {
 
-    @Column(name = "id_MapaDeCarga")
-    private Integer id_MapaDeCarga;
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_mapa_de_carga")
+    private Integer idMapaDeCarga;
 
-    @Column(name = "listaProdutoEstoque")
-    private ProdutoEstoque listaProdutoEstoque;
+    @Column(name = "lista_carga")
+    private ArrayList<EntregaProduto> listaCarga;
 
     @Column(name = "data")
-    private LocalDate data;
+    private LocalDateTime data;
 
     @Column(name = "estoquista")
     private Estoquista estoquista;
 
     @Column(name = "status")
-    private String status;
+    private StatusProduto status;
+    //Só pode: AGUARDANDO_CONFERENCIA, SEPARADO, EM_TRANSITO, ENTREGUE;
 
     @Column(name = "motorista")
     private Motorista motorista;
 
-    public MapaDeCarga() {
+    public Integer getIdMapaDeCarga() {
+        return idMapaDeCarga;
     }
 
-    public Integer getId_MapaDeCarga() {
-        return id_MapaDeCarga;
+    public void setIdMapaDeCarga(Integer idMapaDeCarga) {
+        this.idMapaDeCarga = idMapaDeCarga;
     }
 
-    public void setId_MapaDeCarga(Integer id_MapaDeCarga) {
-        this.id_MapaDeCarga = id_MapaDeCarga;
+    public ArrayList<EntregaProduto> getListaCarga() {
+        return listaCarga;
     }
 
-    public ProdutoEstoque getListaProdutoEstoque() {
-        return listaProdutoEstoque;
+    public void setListaCarga(ArrayList<EntregaProduto> listaCarga) {
+        this.listaCarga = listaCarga;
     }
 
-    public void setListaProdutoEstoque(ProdutoEstoque listaProdutoEstoque) {
-        this.listaProdutoEstoque = listaProdutoEstoque;
-    }
-
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -63,11 +67,11 @@ public class MapaDeCarga {
         this.estoquista = estoquista;
     }
 
-    public String getStatus() {
+    public StatusProduto getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusProduto status) {
         this.status = status;
     }
 
@@ -78,4 +82,7 @@ public class MapaDeCarga {
     public void setMotorista(Motorista motorista) {
         this.motorista = motorista;
     }
+
 }
+
+//OK

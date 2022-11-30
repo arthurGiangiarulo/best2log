@@ -2,6 +2,8 @@ package com.best2log.best2log.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmpresaParceiraRepository extends JpaRepository<EmpresaParceiraRepository, Integer> {
+import com.best2log.best2log.entity.EmpresaParceira;
+
+public interface EmpresaParceiraRepository extends JpaRepository<EmpresaParceira, Integer> {
 
 }

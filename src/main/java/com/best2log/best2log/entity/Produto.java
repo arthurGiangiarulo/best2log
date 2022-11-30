@@ -4,26 +4,34 @@ import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Produto")
+@Table(name = "produto")
 public class Produto {
 
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_produto")
     private Integer id_produto;
 
     @Column(name = "codigo")
     private String codigo;
 
-    @Column(name = "nome")
-    private String nome;
-
+    @Column(name = "nome_produto")
+    private String nomeProduto;
+    
     @Column(name = "categoria")
     private String categoria;
-
+    
+    @Column(name = "data")
+    private Instant data;
+    
     @Column(name = "status")
-    private String status;
+    private StatusProduto status;
 
     @Column(name = "remetente")
     private EmpresaParceira empresaParceira;
@@ -31,11 +39,20 @@ public class Produto {
     @Column(name = "endereco")
     private Endereco endereco;
 
-    @Column(name = "data")
-    private Instant data;
+    @Column(name = "conferente")
+    private Conferente conferente;
 
-    public Produto() {
-    }
+    @Column(name = "estoquista")
+    private Estoquista estoquista;
+
+    @Column(name = "estoque")
+    private Estoque estoque;
+
+    @Column(name = "localizacao")
+    private String localizacao;
+
+    @Column(name = "ativo")
+    private boolean ativo;
 
     public Integer getId_produto() {
         return id_produto;
@@ -53,12 +70,12 @@ public class Produto {
         this.codigo = codigo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
     public String getCategoria() {
@@ -69,11 +86,19 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public String getStatus() {
+    public Instant getData() {
+        return data;
+    }
+
+    public void setData(Instant data) {
+        this.data = data;
+    }
+
+    public StatusProduto getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusProduto status) {
         this.status = status;
     }
 
@@ -93,11 +118,46 @@ public class Produto {
         this.endereco = endereco;
     }
 
-    public Instant getData() {
-        return data;
+    public Conferente getConferente() {
+        return conferente;
     }
 
-    public void setData(Instant data) {
-        this.data = data;
+    public void setConferente(Conferente conferente) {
+        this.conferente = conferente;
     }
+
+    public Estoquista getEstoquista() {
+        return estoquista;
+    }
+
+    public void setEstoquista(Estoquista estoquista) {
+        this.estoquista = estoquista;
+    }
+
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
 }
+
+//OK

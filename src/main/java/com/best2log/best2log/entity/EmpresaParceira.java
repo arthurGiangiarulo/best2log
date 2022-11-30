@@ -2,45 +2,49 @@ package com.best2log.best2log.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EmpresaParceira")
+@Table(name = "empresa_parceira")
 public class EmpresaParceira {
 
-    @Column(name = "id_EmpresaParceira")
-    private Integer id_EmpresaParceira;
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empresa_parceira")
+    private Integer idEmpresaParceira;
 
-    @Column(name = "nome_EmpresaParceira")
-    private String nome_EmpresaParceira;
+    @Column(name = "nome_empresa_parceira")
+    private String nomeEmpresaParceira;
 
-    @Column(name = "razaoSocial")
+    @Column(name = "razao_social")
     private String razaoSocial;
 
     @Column(name = "cnpj")
     private String cnpj;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "ativo")
+    private boolean ativo;
 
-    public EmpresaParceira() {
+    @Column(name = "endereco")
+    private Endereco endereco;
 
+    public Integer getIdEmpresaParceira() {
+        return idEmpresaParceira;
     }
 
-    public Integer getId_EmpresaParceira() {
-        return id_EmpresaParceira;
+    public void setIdEmpresaParceira(Integer idEmpresaParceira) {
+        this.idEmpresaParceira = idEmpresaParceira;
     }
 
-    public void setId_EmpresaParceira(Integer id_EmpresaParceira) {
-        this.id_EmpresaParceira = id_EmpresaParceira;
+    public String getNomeEmpresaParceira() {
+        return nomeEmpresaParceira;
     }
 
-    public String getNome_EmpresaParceira() {
-        return nome_EmpresaParceira;
-    }
-
-    public void setNome_EmpresaParceira(String nome_EmpresaParceira) {
-        this.nome_EmpresaParceira = nome_EmpresaParceira;
+    public void setNomeEmpresaParceira(String nomeEmpresaParceira) {
+        this.nomeEmpresaParceira = nomeEmpresaParceira;
     }
 
     public String getRazaoSocial() {
@@ -59,11 +63,22 @@ public class EmpresaParceira {
         this.cnpj = cnpj;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean isAtivo() {
+        return ativo;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
 }
+
+//OK

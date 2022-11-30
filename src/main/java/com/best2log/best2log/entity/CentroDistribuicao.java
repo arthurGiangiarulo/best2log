@@ -3,63 +3,56 @@ package com.best2log.best2log.entity;
 import java.util.ArrayList;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "centro_distribuicao")
 public class CentroDistribuicao {
 
-    @Column(name = "id_centroDistribuicao")
-    private Integer id_CentroDistribuicao;
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_centro_distribuicao")
+    private Integer idCentroDistribuicao;
 
-    @Column(name = "nome_CentroDistribuicao")
-    private String nome_CentroDistribuicao;
+    @Column(name = "nome_centro_distribuicao")
+    private String nomeCentroDistribuicao;
 
     @Column(name = "endereco")
     private Endereco endereco;
 
     @Column(name = "responsavel")
-    private Administrador resoponsavel;
+    private Administrador responsavel;
 
     @Column(name = "listaConferente")
-    private Conferente listaConferente;
+    private ArrayList<Conferente> listaConferente;
 
     @Column(name = "bairrosAssociados")
     private ArrayList<String> bairrosAssociados;
 
     @Column(name = "estoquista")
-    private Estoquista estoquista;
+    private ArrayList<Estoquista> listaEstoquista;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "ativo")
+    private boolean ativo;
 
-    public CentroDistribuicao(Integer id_CentroDistribuicao, String nome_CentroDistribuicao, Endereco endereco,
-            Administrador resoponsavel, Conferente listaConferente, ArrayList<String> bairrosAssociados,
-            Estoquista estoquista, String status) {
-        this.id_CentroDistribuicao = id_CentroDistribuicao;
-        this.nome_CentroDistribuicao = nome_CentroDistribuicao;
-        this.endereco = endereco;
-        this.resoponsavel = resoponsavel;
-        this.listaConferente = listaConferente;
-        this.bairrosAssociados = bairrosAssociados;
-        this.estoquista = estoquista;
-        this.status = status;
+    public Integer getIdCentroDistribuicao() {
+        return idCentroDistribuicao;
     }
 
-    public CentroDistribuicao() {
+    public void setIdCentroDistribuicao(Integer idCentroDistribuicao) {
+        this.idCentroDistribuicao = idCentroDistribuicao;
     }
 
-    public Integer getId_CentroDistribuicao() {
-        return id_CentroDistribuicao;
+    public String getNomeCentroDistribuicao() {
+        return nomeCentroDistribuicao;
     }
 
-    public void setId_CentroDistribuicao(Integer id_CentroDistribuicao) {
-        this.id_CentroDistribuicao = id_CentroDistribuicao;
-    }
-
-    public String getNome_CentroDistribuicao() {
-        return nome_CentroDistribuicao;
-    }
-
-    public void setNome_CentroDistribuicao(String nome_CentroDistribuicao) {
-        this.nome_CentroDistribuicao = nome_CentroDistribuicao;
+    public void setNomeCentroDistribuicao(String nomeCentroDistribuicao) {
+        this.nomeCentroDistribuicao = nomeCentroDistribuicao;
     }
 
     public Endereco getEndereco() {
@@ -70,19 +63,19 @@ public class CentroDistribuicao {
         this.endereco = endereco;
     }
 
-    public Administrador getResoponsavel() {
-        return resoponsavel;
+    public Administrador getResponsavel() {
+        return responsavel;
     }
 
-    public void setResoponsavel(Administrador resoponsavel) {
-        this.resoponsavel = resoponsavel;
+    public void setResponsavel(Administrador responsavel) {
+        this.responsavel = responsavel;
     }
 
-    public Conferente getListaConferente() {
+    public ArrayList<Conferente> getListaConferente() {
         return listaConferente;
     }
 
-    public void setListaConferente(Conferente listaConferente) {
+    public void setListaConferente(ArrayList<Conferente> listaConferente) {
         this.listaConferente = listaConferente;
     }
 
@@ -94,20 +87,22 @@ public class CentroDistribuicao {
         this.bairrosAssociados = bairrosAssociados;
     }
 
-    public Estoquista getEstoquista() {
-        return estoquista;
+    public ArrayList<Estoquista> getListaEstoquista() {
+        return listaEstoquista;
     }
 
-    public void setEstoquista(Estoquista estoquista) {
-        this.estoquista = estoquista;
+    public void setListaEstoquista(ArrayList<Estoquista> listaEstoquista) {
+        this.listaEstoquista = listaEstoquista;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean isAtivo() {
+        return ativo;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 
 }
+
+//OK

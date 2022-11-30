@@ -1,39 +1,40 @@
 package com.best2log.best2log.entity;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Estoque")
-
+@Table(name = "estoque")
 public class Estoque {
 
-    @Column(name = "id_Estoque")
-    private Integer id_Estoque;
+    @Column(name = "id_estoque")
+    private Integer idEstoque;
 
-    @Column(name = "listaEstoque")
-    private ProdutoEstoque listaEstoque;
+    @Column(name = "lista_estoque")
+    private ArrayList<EntregaProduto> listaEstoque;
 
-    @Column(name = "centroDistribuicao")
+    @Column(name = "centro_distribuicao")
     private CentroDistribuicao centroDistribuicao;
 
     @Column(name = "tipo")
-    private String tipo;
+    private TipoEstoque tipo;
 
-    public Integer getId_Estoque() {
-        return id_Estoque;
+    public Integer getIdEstoque() {
+        return idEstoque;
     }
 
-    public void setId_Estoque(Integer id_Estoque) {
-        this.id_Estoque = id_Estoque;
+    public void setIdEstoque(Integer idEstoque) {
+        this.idEstoque = idEstoque;
     }
 
-    public ProdutoEstoque getListaEstoque() {
+    public ArrayList<EntregaProduto> getListaEstoque() {
         return listaEstoque;
     }
 
-    public void setListaEstoque(ProdutoEstoque listaEstoque) {
+    public void setListaEstoque(ArrayList<EntregaProduto> listaEstoque) {
         this.listaEstoque = listaEstoque;
     }
 
@@ -45,11 +46,14 @@ public class Estoque {
         this.centroDistribuicao = centroDistribuicao;
     }
 
-    public String getTipo() {
+    public TipoEstoque getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoEstoque tipo) {
         this.tipo = tipo;
     }
+
 }
+
+//OK 
