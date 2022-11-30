@@ -157,7 +157,25 @@ public class Produto {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+    public void setAllAtributos(Produto produto) {
+        this.setCodigo(produto.getCodigo());
+        this.setNomeProduto(produto.getNomeProduto());
+        this.setCategoria(produto.getCategoria());
+        this.setData(produto.getData());
+        this.setLocalizacao(produto.getLocalizacao());
+        this.setStatus(produto.getStatus());
+        this.setAtivo(produto.getAtivo());
+        this.setData(produto.getData());
+        this.setEstoque(produto.getEstoque());
+        this.setEndereco(produto.getEndereco());
+        this.setEmpresaParceira(produto.getEmpresaParceira());
+        this.setConferente(produto.getConferente());
+        this.setEstoquista(produto.getEstoquista());
+    }
 
+	private boolean getAtivo() {
+		return false;
+	}
 
 }
 

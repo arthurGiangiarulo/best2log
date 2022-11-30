@@ -37,6 +37,9 @@ public class Endereco {
     @Column(name = "ativo")
     private boolean ativo;
 
+    public Endereco(){
+    }
+
     public Integer getIdEndereco() {
         return idEndereco;
     }
@@ -100,19 +103,21 @@ public class Endereco {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+	private boolean getAtivo() {
+		return false;
+	}
 
-    public void setAllAtributos(Endereco endereco) {
-    }
      public void setAllAtributos(Endereco endereco) {
         this.setIdEndereco(endereco.getIdEndereco());
         this.setCep(endereco.getCep());
-        this.setEndereco(endereco.getEndereco());
-        this.setResponsavel(endereco.getResponsavel());
-        this.setListaConferente(endereco.getListaConferente());
-        this.setBairrosAssociados(endereco.bairrosAssociados);
-        this.setListaEstoquista(endereco.getListaEstoquista());
+        this.setCidade(endereco.getCidade());
+        this.setBairro(endereco.getBairro());
+        this.setLogradouro(endereco.getLogradouro());
+        this.setNumero(endereco.getNumero());
+        this.setComplemento(endereco.getComplemento());
         this.setAtivo(endereco.getAtivo());
     }
+    
 }
 
 //OK

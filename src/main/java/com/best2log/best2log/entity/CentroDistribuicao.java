@@ -39,6 +39,10 @@ public class CentroDistribuicao {
     @Column(name = "ativo")
     private boolean ativo;
 
+    public CentroDistribuicao(){
+
+    }
+    
     public Integer getIdCentroDistribuicao() {
         return idCentroDistribuicao;
     }

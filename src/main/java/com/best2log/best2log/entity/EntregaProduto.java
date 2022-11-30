@@ -25,6 +25,9 @@ public class EntregaProduto {
     @Column(name = "ordem_de_entrega")
     private OrdemDeEntrega ordemDeEntrega;
 
+	public EntregaProduto(){
+    }
+
     public Integer getIdEntregaProduto() {
         return idEntregaProduto;
     }
@@ -52,11 +55,17 @@ public class EntregaProduto {
     public OrdemDeEntrega getOrdemDeEntrega() {
         return ordemDeEntrega;
     }
-
-    public void setOrdemDeEntrega(OrdemDeEntrega ordemDeEntrega) {
-        this.ordemDeEntrega = ordemDeEntrega;
+    private void setOrdemDeEntrega(OrdemDeEntrega ordemDeEntrega) {
     }
+ 
+    public void setAllAtributos(EntregaProduto entregaProduto) {
+        this.setIdEntregaProduto(entregaProduto.getIdEntregaProduto());
+        this.setQuantidade(entregaProduto.getQuantidade());
+        this.setOrdemDeEntrega(entregaProduto.getOrdemDeEntrega());
+        this.setProduto(entregaProduto.getProduto());
+}
 
 }
+      
 
 //OK

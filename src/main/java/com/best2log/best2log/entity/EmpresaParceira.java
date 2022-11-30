@@ -31,6 +31,10 @@ public class EmpresaParceira {
     @Column(name = "endereco")
     private Endereco endereco;
 
+    public EmpresaParceira(){
+
+    }
+
     public Integer getIdEmpresaParceira() {
         return idEmpresaParceira;
     }
@@ -70,6 +74,9 @@ public class EmpresaParceira {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+	private boolean getAtivo() {
+		return false;
+	}
 
     public Endereco getEndereco() {
         return endereco;
@@ -78,7 +85,14 @@ public class EmpresaParceira {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
+       public void setAllAtributos(EmpresaParceira empresaParceira) {
+        this.setIdEmpresaParceira(empresaParceira.getIdEmpresaParceira());
+        this.setNomeEmpresaParceira(empresaParceira.getNomeEmpresaParceira());
+        this.setRazaoSocial(empresaParceira.getRazaoSocial());
+        this.setCnpj(empresaParceira.getCnpj());
+        this.setAtivo(empresaParceira.getAtivo());
+        this.setEndereco(empresaParceira.getEndereco());
+    }
 }
 
 //OK

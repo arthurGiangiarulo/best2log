@@ -17,7 +17,7 @@ public class OrdemDeEntrega {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_ordem_de_entrega")
-    private Integer id_OrdemDeEntrega;
+    private Integer idOrdemDeEntrega;
 
     @Column(name = "lista_produtos")
     private ArrayList<EntregaProduto> listaProdutos;
@@ -31,12 +31,16 @@ public class OrdemDeEntrega {
     @Column(name = "administrador")
     private Administrador administrador;
 
-    public Integer getId_OrdemDeEntrega() {
-        return id_OrdemDeEntrega;
+    public OrdemDeEntrega(){
+        
     }
 
-    public void setId_OrdemDeEntrega(Integer id_OrdemDeEntrega) {
-        this.id_OrdemDeEntrega = id_OrdemDeEntrega;
+    public Integer getIdOrdemDeEntrega() {
+        return idOrdemDeEntrega;
+    }
+
+    public void setIdOrdemDeEntrega(Integer idOrdemDeEntrega) {
+        this.idOrdemDeEntrega = idOrdemDeEntrega;
     }
 
     public ArrayList<EntregaProduto> getListaProdutos() {
@@ -70,6 +74,14 @@ public class OrdemDeEntrega {
     public void setAdministrador(Administrador administrador) {
         this.administrador = administrador;
     }
+
+        public void setAllAtributos(OrdemDeEntrega ordemDeEntrega) {
+        this.setIdOrdemDeEntrega(ordemDeEntrega.getIdOrdemDeEntrega());
+        this.setListaProdutos(ordemDeEntrega.getListaProdutos());
+        this.setEmpresaParceira(ordemDeEntrega.getEmpresaParceira());
+        this.setData(ordemDeEntrega.getData());
+        this.setAdministrador(ordemDeEntrega.getAdministrador());
+}
 
 }
 

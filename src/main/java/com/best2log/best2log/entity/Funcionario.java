@@ -14,10 +14,10 @@ public class Funcionario {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_funcionario")
-    private Integer id_funcionario;
+    private Integer idFuncionario;
 
     @Column(name = "nome_funcionario")
-    private String nome_funcionario;
+    private String nomeFuncionario;
 
     @Column(name = "endereco")
     private Endereco endereco;
@@ -40,20 +40,20 @@ public class Funcionario {
     @Column(name = "status")
     private String status;
 
-    public Integer getId_funcionario() {
-        return id_funcionario;
+    public Integer getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setId_funcionario(Integer id_funcionario) {
-        this.id_funcionario = id_funcionario;
+    public void setIdFuncionario(Integer idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
-    public String getNome_funcionario() {
-        return nome_funcionario;
+    public String getNomeFuncionario() {
+        return nomeFuncionario;
     }
 
-    public void setNome_funcionario(String nome_funcionario) {
-        this.nome_funcionario = nome_funcionario;
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
     }
 
     public Endereco getEndereco() {
@@ -111,7 +111,16 @@ public class Funcionario {
     public void setStatus(String status) {
         this.status = status;
     }
-
+    public void setAllAtributos(Funcionario funcionario) {
+        this.setIdFuncionario(funcionario.getIdFuncionario());
+        this.setNomeFuncionario(funcionario.getNomeFuncionario());
+        this.setEndereco(funcionario.getEndereco());
+        this.setCpf(funcionario.getCpf());
+        this.setRg(funcionario.getRg());
+        this.setLogin(funcionario.getLogin());
+        this.setSenha(funcionario.getSenha());
+        this.setFuncao(funcionario.getFuncao());
+        this.setStatus(funcionario.getStatus());
 }
-
+}
 //OK

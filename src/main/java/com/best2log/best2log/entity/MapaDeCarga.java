@@ -19,7 +19,7 @@ public class MapaDeCarga {
     @Column(name = "id_mapa_de_carga")
     private Integer idMapaDeCarga;
 
-    @Column(name = "lista_carga")
+    @Column(name = "lista_entrega_produto")
     private ArrayList<EntregaProduto> listaCarga;
 
     @Column(name = "data")
@@ -35,6 +35,17 @@ public class MapaDeCarga {
     @Column(name = "motorista")
     private Motorista motorista;
 
+    @Column(name = "administrador")
+    private Administrador administrador;
+
+	public void setAdministrador(Administrador administrador) {
+		this.administrador = administrador;
+	}
+    private Administrador getAdministrador() {
+	return null;
+    }
+	private ArrayList<EntregaProduto> listaEntregaProduto;
+
     public Integer getIdMapaDeCarga() {
         return idMapaDeCarga;
     }
@@ -47,8 +58,8 @@ public class MapaDeCarga {
         return listaCarga;
     }
 
-    public void setListaCarga(ArrayList<EntregaProduto> listaCarga) {
-        this.listaCarga = listaCarga;
+    public void setListaEntregaProduto(Object  object) {
+        this.listaEntregaProduto = (ArrayList<EntregaProduto>) object;
     }
 
     public LocalDateTime getData() {
@@ -82,7 +93,19 @@ public class MapaDeCarga {
     public void setMotorista(Motorista motorista) {
         this.motorista = motorista;
     }
+    private Object getListaEntregaProduto() {
+        return null;
+    }
 
+ public void setAllAtributos(MapaDeCarga mapaDeCarga) {
+        this.setIdMapaDeCarga(mapaDeCarga.getIdMapaDeCarga());
+        this.setData(mapaDeCarga.getData());
+        this.setStatus(mapaDeCarga.getStatus());
+        this.setListaEntregaProduto(mapaDeCarga.getListaEntregaProduto());
+        this.setAdministrador(mapaDeCarga.getAdministrador());
+        this.setMotorista(mapaDeCarga.getMotorista());
+        this.setEstoquista(mapaDeCarga.getEstoquista());
+    }
 }
 
 //OK

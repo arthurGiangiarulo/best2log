@@ -54,6 +54,12 @@ public class Estoque {
         this.tipo = tipo;
     }
 
+        public void setAllAtributos(Estoque estoque) {
+        this.setIdEstoque(estoque.getIdEstoque());
+        this.setListaEstoque(estoque.getListaEstoque());
+        this.setCentroDistribuicao(estoque.getCentroDistribuicao());
+        this.setTipo(estoque.getTipo());
+    }
 }
 
 //OK 
